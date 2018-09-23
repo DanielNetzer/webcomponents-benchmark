@@ -1,0 +1,17 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "start": "",
+    "build:all": "",
+    "build:angular": "",
+    "build:vue": "",
+    "build:stencil": "",
+    "build:vanilla": "",
+    "build:slim": "",
+    "build:polymer": ""
+  },
+  "devDependencies": {
+    "lerna": "^3.4.0"
+  }
+}

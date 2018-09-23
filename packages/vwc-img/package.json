@@ -1,0 +1,39 @@
+{
+  "name": "vwc-img",
+  "version": "1.0.0",
+  "description": "Vanilla Web Component Image",
+  "main": "vwc-img.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "webpack --watch",
+    "start": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielNetzer/vwc-img.git"
+  },
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.1.3"
+  },
+  "author": "Daniel Netzer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielNetzer/vwc-img/issues"
+  },
+  "homepage": "https://github.com/DanielNetzer/vwc-img#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.2",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.2",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8",
+    "webpack-merge": "^4.1.4"
+  }
+}
