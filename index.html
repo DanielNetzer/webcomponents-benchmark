@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            background: #e2e1e0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #17b0cf;
+            color: white;
+            height: 48px;
+            padding: 0 12px;
+            box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 3px -2px rgba(0, 0, 0, 0.14), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+            margin-bottom: 15px;
+        }
+
+        .navbar .title {
+            font-size: 20px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .card {
+            background-color: #fff;
+            display: inline-block;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+            padding: 10px;
+            margin: 15px;
+            border-radius: 2px;
+            width: 29%;
+        }
+
+        .card h3 {
+            text-align: center;
+        }
+
+        .card .spec {
+            display: flex;
+            flex-direction: row;
+        }
+
+        vwc-img {
+            display: inline-block;
+            min-width: 200px;
+            height: 200px;
+            margin: 5px;
+        }
+    </style>
+    <meta charset="utf-8">
+    <title>Web Components Benchmark</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="title">
+            The Web Components Benchmark - By Daniel Netzer
+        </div>
+        <a href="https://github.com/DanielNetzer" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;"
+                src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
+    </div>
+    <div class="row">
+        <!-- Vanilla JS WC -->
+        <div class="card">
+            <h3>
+                <a href="https://www.webcomponents.org/" target="_blank">
+                    <u>Vanilla Javascript:</u>
+                </a>
+            </h3>
+            <div class="spec">
+                <ul>
+                    <li>Bundle size: 4.89 KB Minified Not Gzipped.(without polyfills)</li>
+                    <li>Compatibility: IE11, FF, Edge, Chrome.</li>
+                </ul>
+                <vwc-img src="https://picsum.photos/500/300?image=0" lazy-src="https://picsum.photos/10/6?image=0"></vwc-img>
+            </div>
+        </div>
+
+        <!-- Angular Elements -->
+        <div class="card">
+            <h3>
+                <a href="https://angular.io/guide/elements" target="_blank">
+                    <u>Angular Elements:</u>
+                </a>
+            </h3>
+            <div class="spec">
+                <!-- <ul>
+                    <li>Bundle size: 4.89 KB Minified Not Gzipped.(without polyfills)</li>
+                    <li>Compatibility: IE11, FF, Edge, Chrome.</li>
+                </ul> 
+                <vwc-img src="https://picsum.photos/500/300?image=0" lazy-src="https://picsum.photos/10/6?image=0"></vwc-img> -->
+                <h3>**WIP**</h3>
+            </div>
+        </div>
+
+        <!-- Vue -->
+        <div class="card">
+            <h3>
+                <a href="https://github.com/vuejs/vue-web-component-wrapper" target="_blank">
+                    <u>Vue Web Components Wrapper:</u>
+                </a>
+            </h3>
+            <div class="spec">
+                <!-- <ul>
+                    <li>Bundle size: 4.89 KB Minified Not Gzipped.(without polyfills)</li>
+                    <li>Compatibility: IE11, FF, Edge, Chrome.</li>
+                </ul> 
+                <vwc-img src="https://picsum.photos/500/300?image=0" lazy-src="https://picsum.photos/10/6?image=0"></vwc-img> -->
+                <h3>**WIP**</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Polymer -->
+        <div class="card">
+            <h3>
+                <a href="https://www.polymer-project.org/" target="_blank">
+                    <u>Polymer:</u>
+                </a>
+            </h3>
+            <div class="spec">
+                <!-- <ul>
+                    <li>Bundle size: 4.89 KB Minified Not Gzipped.(without polyfills)</li>
+                    <li>Compatibility: IE11, FF, Edge, Chrome.</li>
+                </ul> 
+                <vwc-img src="https://picsum.photos/500/300?image=0" lazy-src="https://picsum.photos/10/6?image=0"></vwc-img> -->
+                <h3>**WIP**</h3>
+            </div>
+        </div>
+
+        <!-- Stenciljs -->
+        <div class="card">
+            <h3>
+                <a href="https://stenciljs.com/" target="_blank">
+                    <u>Stencil:</u>
+                </a>
+            </h3>
+            <div class="spec">
+                <!-- <ul>
+                        <li>Bundle size: 4.89 KB Minified Not Gzipped.(without polyfills)</li>
+                        <li>Compatibility: IE11, FF, Edge, Chrome.</li>
+                    </ul> 
+                    <vwc-img src="https://picsum.photos/500/300?image=0" lazy-src="https://picsum.photos/10/6?image=0"></vwc-img> -->
+                <h3>**WIP**</h3>
+            </div>
+        </div>
+
+        <!-- Stenciljs -->
+        <div class="card">
+            <h3>
+                <a href="http://slimjs.com" target="_blank">
+                    <u>Slim.js:</u>
+                </a>
+            </h3>
+            <div class="spec">
+                <!-- <ul>
+                            <li>Bundle size: 4.89 KB Minified Not Gzipped.(without polyfills)</li>
+                            <li>Compatibility: IE11, FF, Edge, Chrome.</li>
+                        </ul> 
+                        <vwc-img src="https://picsum.photos/500/300?image=0" lazy-src="https://picsum.photos/10/6?image=0"></vwc-img> -->
+                <h3>**WIP**</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load webcomponents-loader.js to check and load any polyfills your browser needs -->
+    <script src="./vendor/webcomponents-loader.js"></script>
+</body>
+
+</html>

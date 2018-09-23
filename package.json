@@ -9,7 +9,8 @@
     "build:stencil": "",
     "build:vanilla": "",
     "build:slim": "",
-    "build:polymer": ""
+    "build:polymer": "",
+    "build:polyfills": "webpack"
   },
   "devDependencies": {
     "lerna": "^3.4.0"
