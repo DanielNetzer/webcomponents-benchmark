@@ -52,6 +52,7 @@
             flex-direction: row;
         }
 
+        vwcw-img,
         vwc-img,
         ae-img {
             display: inline-block;
@@ -80,8 +81,14 @@
             </h3>
             <div class="spec">
                 <ul>
-                    <li>Bundle size: 4.89 KB Minified Not Gzipped.(without polyfills)</li>
-                    <li>Compatibility: IE11, FF, Edge, Chrome.</li>
+                    <li>Bundle size: 4.89KB min.(without polyfills)</li>
+                    <li>Compatibility: <ul>
+                            <li>IE 11</li>
+                            <li>Chrome</li>
+                            <li>Firefox</li>
+                            <li>Edge</li>
+                        </ul>
+                    </li>
                 </ul>
                 <vwc-img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" lazy-src="https://www.schemecolor.com/wp-content/uploads/javascript-logo.png"></vwc-img>
             </div>
@@ -96,8 +103,14 @@
             </h3>
             <div class="spec">
                 <ul>
-                    <li>Bundle size: 283 KB Minified Not Gzipped.(without polyfills)</li>
-                    <li>Compatibility: IE11, FF, Edge, Chrome.</li>
+                    <li>Bundle size: 283KB min.(without polyfills)</li>
+                    <li>Compatibility: <ul>
+                            <li>IE 11</li>
+                            <li>Chrome</li>
+                            <li>Firefox</li>
+                            <li>Edge</li>
+                        </ul>
+                    </li>
                 </ul>
                 <ae-img src="https://d33wubrfki0l68.cloudfront.net/e4c8616b80581ce719286a7ffc05349903f8db57/52785/images/posts/2018-03-20-a-practical-guide-to-angular-elements/angular-elements-logo.png"
                     lazy-src="https://lh3.googleusercontent.com/2A80rkOBXseFdmJ9IHbaw7RUt1SmFCiWXNnhRvMH3xBX94Ort3ig9ZuZW5l7sGOy1DAUIyXJ-w=w128-h128-e365"></ae-img>
@@ -112,12 +125,18 @@
                 </a>
             </h3>
             <div class="spec">
-                <!-- <ul>
-                    <li>Bundle size: 4.89 KB Minified Not Gzipped.(without polyfills)</li>
-                    <li>Compatibility: IE11, FF, Edge, Chrome.</li>
-                </ul> 
-                <vwc-img src="https://picsum.photos/500/300?image=0" lazy-src="https://picsum.photos/10/6?image=0"></vwc-img> -->
-                <h3>**WIP**</h3>
+                <ul>
+                    <li>Script size: 8.8KB min.(without polyfills)**</li>
+                    <li>Compatibility: <ul>
+                            <li>Chrome</li>
+                            <li>Firefox</li>
+                            <li>Edge</li>
+                        </ul>
+                    </li>
+                    <li><b>** Requires Vue import to work (86KB min.).</b></li>
+                </ul>
+
+                <vwcw-img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg" lazy-src="https://hollowtree.gallerycdn.vsassets.io/extensions/hollowtree/vue-snippets/0.1.9/1536163208133/Microsoft.VisualStudio.Services.Icons.Default"></vwcw-img>
             </div>
         </div>
     </div>
@@ -174,6 +193,8 @@
         </div>
     </div>
 
+    <!-- Vue is neccessery for the wrapper to work -->
+    <script src="https://unpkg.com/vue"></script>
     <!-- Load webcomponents-loader.js to check and load any polyfills your browser needs -->
     <script src="./vendor/webcomponents-loader.js"></script>
 
@@ -181,7 +202,7 @@
         window.addEventListener('WebComponentsReady', function () {
             console.log("WebComponents Ready!");
             // add elements scripts once web components are ready
-            const elScripts = ["./elements/vwc-img.js", "./elements/ae-img.js"];
+            const elScripts = ["./elements/vwc-img.js", "./elements/ae-img.js", "elements/vwcw-img.min.js"];
             const headTag = document.querySelector("head");
             elScripts.forEach(function (scriptSrc) {
                 const elScript = document.createElement("script");

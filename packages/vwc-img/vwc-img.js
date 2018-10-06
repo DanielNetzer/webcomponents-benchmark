@@ -58,6 +58,7 @@
             img.onload = () => {
                 imgDiv.style.filter = `unset`
                 imgDiv.style.backgroundImage = `url("${this.src}")`
+                imgDiv.style.backgroundColor = `unset`
                 this.isLoading = false;
             }
             img.onerror = this.onError
@@ -74,9 +75,10 @@
                 imgContainer.style.width = `100%`
                 imgContainer.style.height = `100%`
                 imgContainer.style.filter = `blur(2px)`
-                imgContainer.style.backgroundSize = `cover`
+                imgContainer.style.backgroundSize = `auto 100%`
                 imgContainer.style.backgroundRepeat = `no-repeat`
-                imgContainer.id = "lazyImg"
+                imgContainer.style.backgroundPosition = `center`;
+                imgContainer.id = `lazyImg`
                 imgContainer.style.backgroundColor = `gray`
                 this.shadowRoot.appendChild(imgContainer)
 
@@ -94,7 +96,7 @@
         }
 
         _removePrevImg() {
-            const img = this.shadowRoot.getElementById("img")
+            const img = this.shadowRoot.getElementById(`lazyImg`)
             if (img) {
                 this.shadowRoot.removeChild(img);
             }

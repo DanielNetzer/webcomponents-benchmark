@@ -9,6 +9,7 @@ const webcomponentsjs = './node_modules/@webcomponents/webcomponentsjs';
 
 const ANGULAR_DIST = './packages/ae-img/dist';
 const VANILLA_DIST = './packages/vwc-img/dist';
+const VUE_DIST = './packages/vwcw-img/dist';
 
 const elements = [{
         from: resolve(`${ANGULAR_DIST}/*.{js,map}`),
@@ -17,6 +18,11 @@ const elements = [{
     },
     {
         from: resolve(`${VANILLA_DIST}/*.{js,map}`),
+        to: join(resolve('dist'), 'elements'),
+        flatten: true
+    },
+    {
+        from: resolve(`${VUE_DIST}/vwcw-img.min.js`),
         to: join(resolve('dist'), 'elements'),
         flatten: true
     }

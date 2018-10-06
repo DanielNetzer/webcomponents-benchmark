@@ -3,9 +3,9 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --open",
-    "build:all": "npm run build:angular && npm run build:vanilla && npm run build:finish",
+    "build:all": "npm run build:angular && npm run build:vanilla && npm run build:vue && npm run build:finish",
     "build:angular": "cd packages/ae-img && npm run build:elements",
-    "build:vue": "",
+    "build:vue": "cd packages/vwcw-img && npm run build",
     "build:stencil": "",
     "build:vanilla": "cd packages/vwc-img && npm run build",
     "build:slim": "",
