@@ -1,4 +1,3 @@
-window.addEventListener('WebComponentsReady', function () {
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
       <style>:host { 
@@ -116,12 +115,11 @@ window.addEventListener('WebComponentsReady', function () {
         attributeChangedCallback(attr, oldValue, newValue) {
             if (oldValue !== newValue && attr === 'src') {
                 // console.log(`Custom img element attributes changed. attrib changes ${attr} from ${oldValue} to ${newValue}`)
-                this[attr] = newValue
-                this._removePrevImg()
-                this._renderImg()
+                this[attr] = newValue;
+                this._removePrevImg();
+                this._renderImg();
             }
         }
     }
 
-    customElements.define('vwc-img', vwcImage)
-});
+    customElements.define('vwc-img', vwcImage);

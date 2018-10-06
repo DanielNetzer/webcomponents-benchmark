@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+    <meta charset="utf-8">
+    <title>Web Components Benchmark</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
             margin: 0;
@@ -49,16 +52,14 @@
             flex-direction: row;
         }
 
-        vwc-img {
+        vwc-img,
+        ae-img {
             display: inline-block;
             min-width: 200px;
             height: 200px;
             margin: 5px;
         }
     </style>
-    <meta charset="utf-8">
-    <title>Web Components Benchmark</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -82,7 +83,7 @@
                     <li>Bundle size: 4.89 KB Minified Not Gzipped.(without polyfills)</li>
                     <li>Compatibility: IE11, FF, Edge, Chrome.</li>
                 </ul>
-                <vwc-img src="https://picsum.photos/500/300?image=0" lazy-src="https://picsum.photos/10/6?image=0"></vwc-img>
+                <vwc-img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" lazy-src="https://www.schemecolor.com/wp-content/uploads/javascript-logo.png"></vwc-img>
             </div>
         </div>
 
@@ -94,12 +95,12 @@
                 </a>
             </h3>
             <div class="spec">
-                <!-- <ul>
-                    <li>Bundle size: 4.89 KB Minified Not Gzipped.(without polyfills)</li>
+                <ul>
+                    <li>Bundle size: 283 KB Minified Not Gzipped.(without polyfills)</li>
                     <li>Compatibility: IE11, FF, Edge, Chrome.</li>
-                </ul> 
-                <vwc-img src="https://picsum.photos/500/300?image=0" lazy-src="https://picsum.photos/10/6?image=0"></vwc-img> -->
-                <h3>**WIP**</h3>
+                </ul>
+                <ae-img src="https://d33wubrfki0l68.cloudfront.net/e4c8616b80581ce719286a7ffc05349903f8db57/52785/images/posts/2018-03-20-a-practical-guide-to-angular-elements/angular-elements-logo.png"
+                    lazy-src="https://lh3.googleusercontent.com/2A80rkOBXseFdmJ9IHbaw7RUt1SmFCiWXNnhRvMH3xBX94Ort3ig9ZuZW5l7sGOy1DAUIyXJ-w=w128-h128-e365"></ae-img>
             </div>
         </div>
 
@@ -175,6 +176,24 @@
 
     <!-- Load webcomponents-loader.js to check and load any polyfills your browser needs -->
     <script src="./vendor/webcomponents-loader.js"></script>
+
+    <script>
+        window.addEventListener('WebComponentsReady', function () {
+            console.log("WebComponents Ready!");
+            // add elements scripts once web components are ready
+            const elScripts = ["./elements/vwc-img.js", "./elements/ae-img.js"];
+            const headTag = document.querySelector("head");
+            elScripts.forEach(function (scriptSrc) {
+                const elScript = document.createElement("script");
+                elScript.src = scriptSrc;
+                headTag.appendChild(elScript);
+            })
+        });
+    </script>
+    <!-- Load all elements by Order -->
+    <!-- <script src="./elements/vwc-img.js"></script> -->
+    <!-- <script src="./elements/ae-img.js"></script> -->
+
 </body>
 
 </html>

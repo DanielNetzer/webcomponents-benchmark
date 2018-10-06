@@ -2,17 +2,25 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "start": "",
-    "build:all": "",
-    "build:angular": "",
+    "start": "webpack-dev-server --open",
+    "build:all": "npm run build:angular && npm run build:vanilla && npm run build:finish",
+    "build:angular": "cd packages/ae-img && npm run build:elements",
     "build:vue": "",
     "build:stencil": "",
-    "build:vanilla": "",
+    "build:vanilla": "cd packages/vwc-img && npm run build",
     "build:slim": "",
     "build:polymer": "",
-    "build:polyfills": "webpack"
+    "build:finish": "webpack"
+  },
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "1.1.0"
   },
   "devDependencies": {
-    "lerna": "^3.4.0"
+    "lerna": "^3.4.0",
+    "copy-webpack-plugin": "^4.5.2",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
   }
 }

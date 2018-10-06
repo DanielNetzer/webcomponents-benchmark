@@ -1,4 +1,26 @@
+const {
+    resolve,
+    join
+} = require('path');
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webcomponentsjs = './node_modules/@webcomponents/webcomponentsjs';
+
+const ANGULAR_DIST = './packages/ae-img/dist';
+const VANILLA_DIST = './packages/vwc-img/dist';
+
+const elements = [{
+        from: resolve(`${ANGULAR_DIST}/*.{js,map}`),
+        to: join(resolve('dist'), 'elements'),
+        flatten: true
+    },
+    {
+        from: resolve(`${VANILLA_DIST}/*.{js,map}`),
+        to: join(resolve('dist'), 'elements'),
+        flatten: true
+    }
+];
 
 const polyfills = [{
         from: resolve(`${webcomponentsjs}/webcomponents-*.{js,map}`),
@@ -19,11 +41,15 @@ const polyfills = [{
 
 module.exports = {
     mode: 'production',
+    entry: './index.js',
+    devServer: {
+        contentBase: './dist'
+    },
     plugins: [
-        new CopyWebpackPlugin([...polyfills])
-    ],
-    output: {
-        filename: '[name].bundle.js',
-        path: resolve(__dirname, 'dist')
-    }
+        new CopyWebpackPlugin([...polyfills, ...elements]),
+        new HtmlWebpackPlugin({
+            template: './index.html',
+            favicon: './favicon.ico'
+        })
+    ]
 };

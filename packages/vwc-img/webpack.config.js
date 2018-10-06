@@ -1,9 +1,8 @@
 const {
     resolve
 } = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 let babelLoader = {
     test: /\.js$/,
@@ -18,10 +17,8 @@ let babelLoader = {
 
 module.exports = {
     mode: 'production',
-    // devtool: 'inline-source-map',
     entry: './vwc-img.js',
     plugins: [
-        new CopyWebpackPlugin([...polyfills]),
         new CleanWebpackPlugin(['dist'])
     ],
     devServer: {
@@ -31,7 +28,7 @@ module.exports = {
         rules: [babelLoader]
     },
     output: {
-        filename: '[name].bundle.js',
+        filename: 'vwc-img.js',
         path: resolve(__dirname, 'dist')
     }
 };
