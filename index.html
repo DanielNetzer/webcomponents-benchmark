@@ -54,7 +54,8 @@
 
         vwcw-img,
         vwc-img,
-        ae-img {
+        ae-img,
+        stencil-img {
             display: inline-block;
             min-width: 200px;
             height: 200px;
@@ -166,12 +167,12 @@
                 </a>
             </h3>
             <div class="spec">
-                <!-- <ul>
-                        <li>Bundle size: 4.89 KB Minified Not Gzipped.(without polyfills)</li>
-                        <li>Compatibility: IE11, FF, Edge, Chrome.</li>
-                    </ul> 
-                    <vwc-img src="https://picsum.photos/500/300?image=0" lazy-src="https://picsum.photos/10/6?image=0"></vwc-img> -->
-                <h3>**WIP**</h3>
+                <ul>
+                    <li>Bundle size: 4.89 KB Minified Not Gzipped.(without polyfills)</li>
+                    <li>Compatibility: IE11, FF, Edge, Chrome.</li>
+                </ul>
+                <stencil-img src="https://pbs.twimg.com/profile_images/895677818998185985/mWrrADXf_400x400.jpg"
+                    lazy-src="https://stenciljs.com/assets/img/logo.png"></stencil-img>
             </div>
         </div>
 
@@ -202,7 +203,9 @@
         window.addEventListener('WebComponentsReady', function () {
             console.log("WebComponents Ready!");
             // add elements scripts once web components are ready
-            const elScripts = ["./elements/vwc-img.js", "./elements/ae-img.js", "elements/vwcw-img.min.js"];
+            const elScripts = ["./elements/vwc-img.js", "./elements/ae-img.js", "elements/vwcw-img.min.js",
+                "elements/stencil-img.ezcmjltd.js"
+            ];
             const headTag = document.querySelector("head");
             elScripts.forEach(function (scriptSrc) {
                 const elScript = document.createElement("script");
@@ -211,9 +214,6 @@
             })
         });
     </script>
-    <!-- Load all elements by Order -->
-    <!-- <script src="./elements/vwc-img.js"></script> -->
-    <!-- <script src="./elements/ae-img.js"></script> -->
 
 </body>
 
