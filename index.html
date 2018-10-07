@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <base href="/">
     <title>Web Components Benchmark</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -168,8 +169,14 @@
             </h3>
             <div class="spec">
                 <ul>
-                    <li>Bundle size: 4.89 KB Minified Not Gzipped.(without polyfills)</li>
-                    <li>Compatibility: IE11, FF, Edge, Chrome.</li>
+                    <li>Script size: 86.8KB min.<b>(with polyfills)</b></li>
+                    <li>Compatibility: <ul>
+                            <li>Chrome</li>
+                            <li>Firefox</li>
+                            <li>Edge</li>
+                            <li>IE 11</li>
+                        </ul>
+                    </li>
                 </ul>
                 <stencil-img src="https://pbs.twimg.com/profile_images/895677818998185985/mWrrADXf_400x400.jpg"
                     lazy-src="https://stenciljs.com/assets/img/logo.png"></stencil-img>
@@ -204,7 +211,7 @@
             console.log("WebComponents Ready!");
             // add elements scripts once web components are ready
             const elScripts = ["./elements/vwc-img.js", "./elements/ae-img.js", "elements/vwcw-img.min.js",
-                "elements/stencil-img.ezcmjltd.js"
+                "elements/stencil/stencil-img.js"
             ];
             const headTag = document.querySelector("head");
             elScripts.forEach(function (scriptSrc) {
