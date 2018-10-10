@@ -1,16 +1,36 @@
-const {
-    resolve
-} = require('path');
+const path = require('path');
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 let babelLoader = {
     test: /\.js$/,
-    exclude: /node_modules\/(?!(@webcomponents\/shadycss|lit-html|@polymer)\/).*/,
+    exclude: /node_modules\/(?!(@polymer)\/).*/,
     use: {
         loader: "babel-loader",
         options: {
-            presets: ["@babel/preset-env"]
+            babelrc: true,
+            presets: [
+                [
+                    "@babel/preset-env",
+                    {
+                        modules: false,
+                        targets: {
+                            ie: 11
+                        }
+                    }
+                ]
+            ],
+            plugins: [
+                [
+                    "@babel/plugin-transform-runtime",
+                    {
+                        corejs: false,
+                        helpers: false,
+                        regenerator: true,
+                        useESModules: false
+                    }
+                ]
+            ]
         }
     }
 };
@@ -29,6 +49,6 @@ module.exports = {
     },
     output: {
         filename: 'lit-img.js',
-        path: resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist')
     }
 };

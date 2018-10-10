@@ -4,14 +4,14 @@
   "scripts": {
     "start": "webpack-dev-server --open",
     "prebuild:all": "rimraf dist",
-    "build:all": "npm run build:angular && npm run build:stencil && npm run build:vanilla && npm run build:vue && npm run build:polymer",
+    "build:all": "npm run build:angular && npm run build:stencil && npm run build:vanilla && npm run build:vue && npm run build:lit",
     "postbuild:all": "webpack",
     "build:angular": "cd packages/ae-img && npm run build:elements",
     "build:vue": "cd packages/vwcw-img && npm run build",
     "build:stencil": "cd packages/stencil-img && npm run build",
     "build:vanilla": "cd packages/vwc-img && npm run build",
     "build:slim": "",
-    "build:polymer": "cd packages/lit-img && npm run build"
+    "build:lit": "cd packages/lit-img && npm run build"
   },
   "dependencies": {
     "@webcomponents/webcomponentsjs": "1.1.0"
