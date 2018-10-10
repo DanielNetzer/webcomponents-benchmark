@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Lit-element example</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Polyfills only needed for Firefox and Edge. -->
+    <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="./node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+    <style>
+        lit-img {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <lit-img src="https://www.polymer-project.org/images/logos/p-logo.png" lazySrc="https://www.schemecolor.com/wp-content/uploads/javascript-logo.png"></lit-img>
+
+    <script src="./dist/lit-img.js" type="module"></script>
+
+</body>
+
+</html>

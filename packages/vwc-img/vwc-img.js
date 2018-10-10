@@ -49,54 +49,54 @@
                 `Image load failed\n\n` +
                 `src: ${this.src}` +
                 (err.message ? `\nOriginal error: ${err.message}` : '')
-            )
+            );
         }
 
         _loadImg(imgDiv) {
-            const img = new Image()
+            const img = new Image();
 
             img.onload = () => {
-                imgDiv.style.filter = `unset`
-                imgDiv.style.backgroundImage = `url("${this.src}")`
-                imgDiv.style.backgroundColor = `unset`
+                imgDiv.style.filter = `unset`;
+                imgDiv.style.backgroundImage = `url("${this.src}")`;
+                imgDiv.style.backgroundColor = `unset`;
                 this.isLoading = false;
             }
-            img.onerror = this.onError
+            img.onerror = this.onError;
 
-            img.src = this.src
+            img.src = this.src;
         }
 
         _renderImg() {
             const imgContainer = document.createElement("div");
-            const lazyImg = new Image()
+            const lazyImg = new Image();
 
             if (this.lazySrc) {
-                lazyImg.src = this.lazySrc
-                imgContainer.style.width = `100%`
-                imgContainer.style.height = `100%`
-                imgContainer.style.filter = `blur(2px)`
-                imgContainer.style.backgroundSize = `auto 100%`
-                imgContainer.style.backgroundRepeat = `no-repeat`
+                lazyImg.src = this.lazySrc;
+                imgContainer.style.width = `100%`;
+                imgContainer.style.height = `100%`;
+                imgContainer.style.filter = `blur(2px)`;
+                imgContainer.style.backgroundSize = `auto 100%`;
+                imgContainer.style.backgroundRepeat = `no-repeat`;
                 imgContainer.style.backgroundPosition = `center`;
-                imgContainer.id = `lazyImg`
-                imgContainer.style.backgroundColor = `gray`
-                this.shadowRoot.appendChild(imgContainer)
+                imgContainer.id = `lazyImg`;
+                imgContainer.style.backgroundColor = `gray`;
+                this.shadowRoot.appendChild(imgContainer);
 
                 lazyImg.onload = () => {
                     if (this.isLoading) {
-                        imgContainer.style.backgroundColor = `none`
-                        imgContainer.style.backgroundImage = `url("${this.lazySrc}")`
+                        imgContainer.style.backgroundColor = `none`;
+                        imgContainer.style.backgroundImage = `url("${this.lazySrc}")`;
                     }
                 }
             }
 
             if (this.src) {
-                this._loadImg(imgContainer)
+                this._loadImg(imgContainer);
             }
         }
 
         _removePrevImg() {
-            const img = this.shadowRoot.getElementById(`lazyImg`)
+            const img = this.shadowRoot.getElementById(`lazyImg`);
             if (img) {
                 this.shadowRoot.removeChild(img);
             }

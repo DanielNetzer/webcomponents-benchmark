@@ -3,25 +3,26 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --open",
-    "build:all": "rimraf dist && npm run build:angular && npm run build:stencil && npm run build:vanilla && npm run build:vue && npm run build:finish",
+    "prebuild:all": "rimraf dist",
+    "build:all": "npm run build:angular && npm run build:stencil && npm run build:vanilla && npm run build:vue && npm run build:polymer",
+    "postbuild:all": "webpack",
     "build:angular": "cd packages/ae-img && npm run build:elements",
     "build:vue": "cd packages/vwcw-img && npm run build",
     "build:stencil": "cd packages/stencil-img && npm run build",
     "build:vanilla": "cd packages/vwc-img && npm run build",
     "build:slim": "",
-    "build:polymer": "",
-    "build:finish": "webpack"
+    "build:polymer": "cd packages/lit-img && npm run build"
   },
   "dependencies": {
     "@webcomponents/webcomponentsjs": "1.1.0"
   },
   "devDependencies": {
-    "lerna": "^3.4.0",
     "copy-webpack-plugin": "^4.5.2",
     "html-webpack-plugin": "^3.2.0",
+    "http-server": "^0.11.1",
+    "lerna": "^3.4.0",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.8",
-    "http-server": "^0.11.1"
+    "webpack-dev-server": "^3.1.8"
   }
 }
