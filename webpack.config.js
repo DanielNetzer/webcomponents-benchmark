@@ -16,47 +16,47 @@ const SVELTE_DIST = './packages/svelte-img/public';
 
 const elements = [{
         from: resolve(`${ANGULAR_DIST}/*.{js,map}`),
-        to: join(resolve('dist'), 'elements'),
+        to: join(resolve('docs'), 'elements'),
         flatten: true
     },
     {
         from: resolve(`${VANILLA_DIST}/*.{js,map}`),
-        to: join(resolve('dist'), 'elements'),
+        to: join(resolve('docs'), 'elements'),
         flatten: true
     },
     {
         from: resolve(`${VUE_DIST}/vwcw-img.min.js`),
-        to: join(resolve('dist'), 'elements'),
+        to: join(resolve('docs'), 'elements'),
         flatten: true
     },
     {
         from: resolve(`${STENCIL_DIST}/build`),
-        to: join(resolve('dist'), 'elements/stencil')
+        to: join(resolve('docs'), 'elements/stencil')
     },
     {
         from: resolve(`${POLYMER_DIST}/lit-img.js`),
-        to: join(resolve('dist'), 'elements'),
+        to: join(resolve('docs'), 'elements'),
         flatten: true
     }, {
         from: resolve(`${SVELTE_DIST}/svelte-img.js`),
-        to: join(resolve('dist'), 'elements'),
+        to: join(resolve('docs'), 'elements'),
         flatten: true
     }
 ];
 
 const polyfills = [{
         from: resolve(`${webcomponentsjs}/webcomponents-*.{js,map}`),
-        to: join(resolve('dist'), 'vendor'),
+        to: join(resolve('docs'), 'vendor'),
         flatten: true
     },
     {
         from: resolve(`${webcomponentsjs}/bundles/*.{js,map}`),
-        to: join(resolve('dist'), 'vendor', 'bundles'),
+        to: join(resolve('docs'), 'vendor', 'bundles'),
         flatten: true
     },
     {
         from: resolve(`${webcomponentsjs}/custom-elements-es5-adapter.js`),
-        to: join(resolve('dist'), 'vendor'),
+        to: join(resolve('docs'), 'vendor'),
         flatten: true
     }
 ];
@@ -64,8 +64,11 @@ const polyfills = [{
 module.exports = {
     mode: 'production',
     entry: './index.js',
+    output: {
+        path: __dirname + '/docs'
+    },
     devServer: {
-        contentBase: './dist'
+        contentBase: './docs'
     },
     plugins: [
         new CopyWebpackPlugin([...polyfills, ...elements]),

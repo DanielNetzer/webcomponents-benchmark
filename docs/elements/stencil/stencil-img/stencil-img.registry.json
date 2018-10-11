@@ -1,0 +1,15 @@
+{
+  "namespace": "StencilImg",
+  "fsNamespace": "stencil-img",
+  "loader": "../stencil-img.js",
+  "core": "stencil-img.core.js",
+  "corePolyfilled": "stencil-img.core.pf.js",
+  "components": {
+    "stencil-img": {
+      "bundleIds": {
+        "$": "stencil-img"
+      },
+      "encapsulation": "shadow"
+    }
+  }
+}
