@@ -14,35 +14,36 @@
         // Specify observed attributes so that
         // attributeChangedCallback will work
         static get observedAttributes() {
-            return ['src', 'lazy-src'];
+            return ['src', 'lazysrc'];
         }
 
         constructor() {
             super();
             this.isLoading = true;
+            this.isLoaded = false;
             this.attachShadow({
                 mode: 'open'
             });
             this.shadowRoot.appendChild(tmpl.content.cloneNode(true));
         }
 
-        get src() {
-            const value = this.getAttribute('src');
-            return value === null ? '' : value;
-        }
+        // get src() {
+        //     const value = this.getAttribute('src');
+        //     return value === null ? '' : value;
+        // }
 
-        set src(value) {
-            this.setAttribute('src', value);
-        }
+        // set src(value) {
+        //     this.setAttribute('src', value);
+        // }
 
-        get lazySrc() {
-            const value = this.getAttribute('lazy-src');
-            return value === null ? '' : value;
-        }
+        // get lazysrc() {
+        //     const value = this.getAttribute('lazy-src');
+        //     return value === null ? '' : value;
+        // }
 
-        set lazySrc(value) {
-            this.setAttribute('lazy-src', value);
-        }
+        // set lazysrc(value) {
+        //     this.setAttribute('lazy-src', value);
+        // }
 
         onError(err) {
             console.error(
@@ -70,8 +71,8 @@
             const imgContainer = document.createElement("div");
             const lazyImg = new Image();
 
-            if (this.lazySrc) {
-                lazyImg.src = this.lazySrc;
+            if (this.lazysrc) {
+                lazyImg.src = this.lazysrc;
                 imgContainer.style.width = `100%`;
                 imgContainer.style.height = `100%`;
                 imgContainer.style.filter = `blur(2px)`;
@@ -85,7 +86,7 @@
                 lazyImg.onload = () => {
                     if (this.isLoading) {
                         imgContainer.style.backgroundColor = `none`;
-                        imgContainer.style.backgroundImage = `url("${this.lazySrc}")`;
+                        imgContainer.style.backgroundImage = `url("${this.lazysrc}")`;
                     }
                 }
             }
@@ -102,22 +103,10 @@
             }
         }
 
-        // connectedCallback() {
-        //     console.log(`Custom img element added to the page.`);
-        // }
-
-        // disconnectedCallback() {
-        //     console.log('Custom img element removed from page.')
-        // }
-
-        // adoptedCallback() {
-        //     console.log('Custom img element moved to new page.')
-        // }
-
         attributeChangedCallback(attr, oldValue, newValue) {
-            if (oldValue !== newValue && attr === 'src') {
-                // console.log(`Custom img element attributes changed. attrib changes ${attr} from ${oldValue} to ${newValue}`)
-                this[attr] = newValue;
+            this[attr] = newValue;
+            this.isLoaded = !!this.lazysrc && !!this.src;
+            if (oldValue !== newValue && attr === 'src' || this.isLoaded) {
                 this._removePrevImg();
                 this._renderImg();
             }

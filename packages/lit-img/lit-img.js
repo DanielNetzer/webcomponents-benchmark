@@ -37,7 +37,6 @@ class LitImg extends LitElement {
         this[attr] = newValue;
         this.isLoaded = !!this.lazysrc && !!this.src;
         if (oldValue !== newValue && attr === 'src' || this.isLoaded) {
-            this.isLoaded = false;
             this._removePrevImg();
             this._renderImg();
         }

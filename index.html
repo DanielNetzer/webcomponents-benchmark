@@ -57,7 +57,8 @@
         vwc-img,
         ae-img,
         stencil-img,
-        lit-img {
+        lit-img,
+        svelte-img {
             display: inline-block;
             min-width: 200px;
             height: 200px;
@@ -133,7 +134,7 @@
                         </ul>
                     </li>
                 </ul>
-                <vwc-img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" lazy-src="https://www.schemecolor.com/wp-content/uploads/javascript-logo.png"></vwc-img>
+                <vwc-img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" lazysrc="https://www.schemecolor.com/wp-content/uploads/javascript-logo.png"></vwc-img>
             </div>
         </div>
 
@@ -233,17 +234,17 @@
         <!-- Stenciljs -->
         <div class="card">
             <h3>
-                <a href="http://slimjs.com" target="_blank">
-                    <u>Slim.js:</u>
+                <a href="https://svelte.technology/" target="_blank">
+                    <u>Svelte:</u>
                 </a>
             </h3>
             <div class="spec">
-                <!-- <ul>
-                            <li>Bundle size: 4.89 KB Minified Not Gzipped.(without polyfills)</li>
-                            <li>Compatibility: IE11, FF, Edge, Chrome.</li>
-                        </ul> 
-                        <vwc-img src="https://picsum.photos/500/300?image=0" lazy-src="https://picsum.photos/10/6?image=0"></vwc-img> -->
-                <h3>**WIP**</h3>
+                <ul>
+                    <li>Bundle size: 3.91 KB Minified Not Gzipped.(without polyfills)</li>
+                    <li>Compatibility: FF, Edge, Chrome.</li>
+                </ul>
+                <svelte-img src="https://avatars0.githubusercontent.com/u/23617963?s=400&v=4" lazysrc="https://storage.googleapis.com/pwa-directory.appspot.com/128_5701736371585024.png">
+                </svelte-img>
             </div>
         </div>
     </div>
@@ -258,7 +259,7 @@
             console.log("WebComponents Ready!");
             // add elements scripts once web components are ready
             const elScripts = ["./elements/vwc-img.js", "./elements/ae-img.js", "elements/vwcw-img.min.js",
-                "elements/stencil/stencil-img.js", " elements/lit-img.js"
+                "elements/stencil/stencil-img.js", " elements/lit-img.js", "elements/svelte-img.js"
             ];
             const headTag = document.querySelector("head");
             elScripts.forEach(function (scriptSrc) {

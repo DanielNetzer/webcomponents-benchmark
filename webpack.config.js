@@ -12,6 +12,7 @@ const VANILLA_DIST = './packages/vwc-img/dist';
 const VUE_DIST = './packages/vwcw-img/dist';
 const STENCIL_DIST = './packages/stencil-img/www';
 const POLYMER_DIST = './packages/lit-img/dist';
+const SVELTE_DIST = './packages/svelte-img/public';
 
 const elements = [{
         from: resolve(`${ANGULAR_DIST}/*.{js,map}`),
@@ -36,7 +37,11 @@ const elements = [{
         from: resolve(`${POLYMER_DIST}/lit-img.js`),
         to: join(resolve('dist'), 'elements'),
         flatten: true
-    },
+    }, {
+        from: resolve(`${SVELTE_DIST}/svelte-img.js`),
+        to: join(resolve('dist'), 'elements'),
+        flatten: true
+    }
 ];
 
 const polyfills = [{
