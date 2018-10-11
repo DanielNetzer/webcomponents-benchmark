@@ -11,7 +11,7 @@
 <script>
 	export default {
 		tag: 'svelte-img',
-		props: ['src', 'lazysrc', 'lazysrc'],
+		props: ['src', 'lazysrc'],
 
 		data() {
 			return {
@@ -24,7 +24,6 @@
 				this[attr] = newValue;
 				this.isLoaded = !!this.lazysrc && !!this.src;
 				if (oldValue !== newValue && attr === 'src' || this.isLoaded) {
-					console.dir(this);
 					this.isLoaded = true;
 					this._removePrevImg();
 					this._renderImg();
