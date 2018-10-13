@@ -61,6 +61,11 @@ const polyfills = [{
     }
 ];
 
+const style = {
+    from: resolve('./styles.css'),
+    to: join(resolve('docs'))
+}
+
 module.exports = {
     mode: 'production',
     entry: './index.js',
@@ -71,7 +76,7 @@ module.exports = {
         contentBase: './docs'
     },
     plugins: [
-        new CopyWebpackPlugin([...polyfills, ...elements]),
+        new CopyWebpackPlugin([...polyfills, ...elements, style]),
         new HtmlWebpackPlugin({
             template: './index.html',
             favicon: './favicon.ico'

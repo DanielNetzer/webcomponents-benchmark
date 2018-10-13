@@ -1,11 +1,5 @@
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
-      <style>:host { 
-        height: 100%;
-        width: 100%;
-        display: block;
-       }
-       </style>
        <slot></slot>
     `;
 
@@ -20,30 +14,12 @@
         constructor() {
             super();
             this.isLoading = true;
-            this.isLoaded = false;
+            this.shouldLoad = false;
             this.attachShadow({
                 mode: 'open'
             });
             this.shadowRoot.appendChild(tmpl.content.cloneNode(true));
         }
-
-        // get src() {
-        //     const value = this.getAttribute('src');
-        //     return value === null ? '' : value;
-        // }
-
-        // set src(value) {
-        //     this.setAttribute('src', value);
-        // }
-
-        // get lazysrc() {
-        //     const value = this.getAttribute('lazy-src');
-        //     return value === null ? '' : value;
-        // }
-
-        // set lazysrc(value) {
-        //     this.setAttribute('lazy-src', value);
-        // }
 
         onError(err) {
             console.error(
@@ -51,6 +27,8 @@
                 `src: ${this.src}` +
                 (err.message ? `\nOriginal error: ${err.message}` : '')
             );
+
+            this.isLoading = false;
         }
 
         _loadImg(imgDiv) {
@@ -73,10 +51,9 @@
 
             if (this.lazysrc) {
                 lazyImg.src = this.lazysrc;
-                imgContainer.style.width = `100%`;
                 imgContainer.style.height = `100%`;
                 imgContainer.style.filter = `blur(2px)`;
-                imgContainer.style.backgroundSize = `auto 100%`;
+                imgContainer.style.backgroundSize = `contain`;
                 imgContainer.style.backgroundRepeat = `no-repeat`;
                 imgContainer.style.backgroundPosition = `center`;
                 imgContainer.id = `lazyImg`;
@@ -85,7 +62,7 @@
 
                 lazyImg.onload = () => {
                     if (this.isLoading) {
-                        imgContainer.style.backgroundColor = `none`;
+                        imgContainer.style.backgroundColor = `unset`;
                         imgContainer.style.backgroundImage = `url("${this.lazysrc}")`;
                     }
                 }
@@ -105,8 +82,8 @@
 
         attributeChangedCallback(attr, oldValue, newValue) {
             this[attr] = newValue;
-            this.isLoaded = !!this.lazysrc && !!this.src;
-            if (oldValue !== newValue && attr === 'src' || this.isLoaded) {
+            this.shouldLoad = !!this.lazysrc && !!this.src;
+            if ((oldValue !== newValue && attr === 'src' && !this.isLoading) || (oldValue !== newValue && this.shouldLoad)) {
                 this._removePrevImg();
                 this._renderImg();
             }

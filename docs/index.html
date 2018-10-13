@@ -6,71 +6,13 @@
     <base href="/">
     <title>Web Components Benchmark</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            margin: 0;
-            background: #e2e1e0;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #64CEAA;
-            color: white;
-            height: 90px;
-            padding: 0 12px;
-            box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 3px -2px rgba(0, 0, 0, 0.14), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
-            margin-bottom: 15px;
-        }
-
-        .navbar .title {
-            font-size: 20px;
-        }
-
-        .row {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-        }
-
-        .card {
-            background-color: #fff;
-            display: inline-block;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-            padding: 10px;
-            margin: 15px;
-            border-radius: 2px;
-            width: 29%;
-        }
-
-        .card h3 {
-            text-align: center;
-        }
-
-        .card .spec {
-            display: flex;
-            flex-direction: row;
-        }
-
-        vwcw-img,
-        vwc-img,
-        ae-img,
-        stencil-img,
-        lit-img,
-        svelte-img {
-            display: inline-block;
-            min-width: 200px;
-            height: 200px;
-            margin: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 <link rel="shortcut icon" href="favicon.ico"></head>
 
 <body>
     <div class="navbar">
         <div class="title">
-            The Web Components Benchmark - By Daniel Netzer
+            Web Components Benchmark
         </div>
         <a href="https://github.com/DanielNetzer/webcomponents-benchmark" class="github-corner" aria-label="View source on GitHub"><svg
                 width="80" height="80" viewBox="0 0 250 250" style="fill:currentColor; color:#fff; position: absolute; top: 0; border: 0; right: 0;"
@@ -80,173 +22,123 @@
                     fill="#64CEAA" style="transform-origin: 130px 106px;" class="octo-arm"></path>
                 <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
                     fill="#64CEAA" class="octo-body"></path>
-            </svg></a>
-        <style>
-            .github-corner:hover .octo-arm {
-                animation: octocat-wave 560ms ease-in-out
-            }
-
-            @keyframes octocat-wave {
-
-                0%,
-                100% {
-                    transform: rotate(0)
-                }
-
-                20%,
-                60% {
-                    transform: rotate(-25deg)
-                }
-
-                40%,
-                80% {
-                    transform: rotate(10deg)
-                }
-            }
-
-            @media (max-width:500px) {
-                .github-corner:hover .octo-arm {
-                    animation: none
-                }
-
-                .github-corner .octo-arm {
-                    animation: octocat-wave 560ms ease-in-out
-                }
-            }
-        </style>
+            </svg>
+        </a>
     </div>
-    <div class="row">
-        <!-- Vanilla JS WC -->
+    <!-- Intro -->
+    <div class="emp">
+        <header>
+            The What and Why...
+        </header>
+        <p>
+            This is a web components benchmarking for some of the most used UI libraries/frameworks out there, Because
+            it's about time we do something like this.
+        </p>
+    </div>
+
+    <section>
+        <!-- Vanilla Javascript -->
         <div class="card">
-            <h3>
-                <a href="https://www.webcomponents.org/" target="_blank">
-                    <u>Vanilla Javascript:</u>
-                </a>
-            </h3>
-            <div class="spec">
-                <ul>
-                    <li>Bundle size: 4.89KB min.(without polyfills)</li>
-                    <li>Compatibility: <ul>
-                            <li>IE 11</li>
-                            <li>Chrome</li>
-                            <li>Firefox</li>
-                            <li>Edge</li>
+            <header>
+                Vanilla
+            </header>
+            <div class="content">
+                <div class="spec">
+                    <section>
+                        4.62KB
+                    </section>
+                    <section>
+                        <i class="chrome" title="Chrome"></i>
+                        <i class="firefox" title="Firefox"></i>
+                        <i class="edge" title="Edge"></i>
+                        <i class="ie11" title="Internet Explorer 11"></i>
+                    </section>
+                    <header>
+                        Pro's:
+                    </header>
+                    <section>
+                        <ul>
+                            <li>Small bundle size</li>
+                            <li>Easy to use for small elements</li>
                         </ul>
-                    </li>
-                </ul>
-                <vwc-img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" lazysrc="https://www.schemecolor.com/wp-content/uploads/javascript-logo.png"></vwc-img>
+                    </section>
+                    <header>
+                        Con's:
+                    </header>
+                    <section>
+                        <ul>
+                            <li>Documentation still lacks a lot</li>
+                            <li>Unusable for heavy elements</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <a href="https://www.webcomponents.org/" target="_blank">
+                            Documentation
+                        </a>
+                    </section>
+                </div>
+                <div class="element">
+                    <vwc-img src="./assets/vanilla/javascript.png" lazysrc="./assets/vanilla/javascript-lazy.png"></vwc-img>
+                </div>
             </div>
         </div>
 
         <!-- Angular Elements -->
         <div class="card">
-            <h3>
-                <a href="https://angular.io/guide/elements" target="_blank">
-                    <u>Angular Elements:</u>
-                </a>
-            </h3>
-            <div class="spec">
-                <ul>
-                    <li>Bundle size: 283KB min.(without polyfills)</li>
-                    <li>Compatibility: <ul>
-                            <li>IE 11</li>
-                            <li>Chrome</li>
-                            <li>Firefox</li>
-                            <li>Edge</li>
+            <header>
+                Angular Elements
+            </header>
+            <div class="content">
+                <div class="spec">
+                    <section>
+                        283KB
+                    </section>
+                    <section>
+                        <i class="chrome" title="Chrome"></i>
+                        <i class="firefox" title="Firefox"></i>
+                        <i class="edge" title="Edge"></i>
+                        <i class="ie11" title="Internet Explorer 11"></i>
+                    </section>
+                    <header>
+                        Pro's:
+                    </header>
+                    <section>
+                        <ul>
+                            <li>Great for UI Libraries</li>
+                            <li>Works well for complex elements</li>
                         </ul>
-                    </li>
-                </ul>
-                <ae-img src="https://d33wubrfki0l68.cloudfront.net/e4c8616b80581ce719286a7ffc05349903f8db57/52785/images/posts/2018-03-20-a-practical-guide-to-angular-elements/angular-elements-logo.png"
-                    lazy-src="https://lh3.googleusercontent.com/2A80rkOBXseFdmJ9IHbaw7RUt1SmFCiWXNnhRvMH3xBX94Ort3ig9ZuZW5l7sGOy1DAUIyXJ-w=w128-h128-e365"></ae-img>
-            </div>
-        </div>
-
-        <!-- Vue -->
-        <div class="card">
-            <h3>
-                <a href="https://github.com/vuejs/vue-web-component-wrapper" target="_blank">
-                    <u>Vue Web Components Wrapper:</u>
-                </a>
-            </h3>
-            <div class="spec">
-                <ul>
-                    <li>Script size: 8.8KB min.(without polyfills)**</li>
-                    <li>Compatibility: <ul>
-                            <li>Chrome</li>
-                            <li>Firefox</li>
-                            <li>Edge</li>
+                    </section>
+                    <header>
+                        Con's:
+                    </header>
+                    <section>
+                        <ul>
+                            <li>Gigantic bundle size!</li>
+                            <li>Documentation still lacks a lot</li>
                         </ul>
-                    </li>
-                    <li><b>** Requires Vue import to work (86KB min.).</b></li>
-                </ul>
+                    </section>
+                    <section>
+                        <a href="https://angular.io/guide/elements" target="_blank">
+                            Documentation
+                        </a>
+                    </section>
+                </div>
+                <div class="element">
+                    <ae-img src="./assets/angular/angular-elements.png" lazy-src="./assets/angular/angular-elements-lazy.png"></ae-img>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <vwcw-img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg" lazy-src="https://hollowtree.gallerycdn.vsassets.io/extensions/hollowtree/vue-snippets/0.1.9/1536163208133/Microsoft.VisualStudio.Services.Icons.Default"></vwcw-img>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <!-- Polymer -->
-        <div class="card">
-            <h3>
-                <a href="https://polymer.github.io/lit-html/" target="_blank">
-                    <u>Lit-Html by Polymer:</u>
-                </a>
-            </h3>
-            <div class="spec">
-                <ul>
-                    <li>Script size: 45.2KB min.(without polyfills)</li>
-                    <li>Compatibility: <ul>
-                            <li>Chrome</li>
-                            <li>Firefox</li>
-                            <li>Edge</li>
-                            <li>IE 11</li>
-                        </ul>
-                    </li>
-                </ul>
-                <lit-img src="https://www.polymer-project.org/images/logos/p-logo.png" lazySrc="https://www.schemecolor.com/wp-content/uploads/javascript-logo.png"></lit-img>
-                </lit-img>
-            </div>
-        </div>
-
-        <!-- Stenciljs -->
-        <div class="card">
-            <h3>
-                <a href="https://stenciljs.com/" target="_blank">
-                    <u>Stencil:</u>
-                </a>
-            </h3>
-            <div class="spec">
-                <ul>
-                    <li>Script size: 86.8KB min.<b>(with polyfills)</b></li>
-                    <li>Compatibility: <ul>
-                            <li>Chrome</li>
-                            <li>Firefox</li>
-                            <li>Edge</li>
-                            <li>IE 11</li>
-                        </ul>
-                    </li>
-                </ul>
-                <stencil-img src="https://pbs.twimg.com/profile_images/895677818998185985/mWrrADXf_400x400.jpg"
-                    lazy-src="https://stenciljs.com/assets/img/logo.png"></stencil-img>
-            </div>
-        </div>
-
-        <!-- Stenciljs -->
-        <div class="card">
-            <h3>
-                <a href="https://svelte.technology/" target="_blank">
-                    <u>Svelte:</u>
-                </a>
-            </h3>
-            <div class="spec">
-                <ul>
-                    <li>Bundle size: 3.91 KB Minified Not Gzipped.(without polyfills)</li>
-                    <li>Compatibility: FF, Edge, Chrome.</li>
-                </ul>
-                <svelte-img src="https://avatars0.githubusercontent.com/u/23617963?s=400&v=4" lazysrc="https://storage.googleapis.com/pwa-directory.appspot.com/128_5701736371585024.png">
-                </svelte-img>
-            </div>
-        </div>
+    <!-- Outro -->
+    <div class="emp">
+        <header>
+            Contribution
+        </header>
+        <p>
+            This is a web components benchmarking for some of the most used UI libraries/frameworks out there, Because
+            it's about time we do something like this.
+        </p>
     </div>
 
     <!-- Vue is neccessery for the wrapper to work -->
