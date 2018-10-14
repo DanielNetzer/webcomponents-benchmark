@@ -141,16 +141,6 @@ ul {
     }
 }
 
-@media (max-width:500px) {
-    .github-corner:hover .octo-arm {
-        animation: none
-    }
-
-    .github-corner .octo-arm {
-        animation: octocat-wave 560ms ease-in-out
-    }
-}
-
 @media only screen and (max-width: 1300px) {
     section {
         grid-template-columns: 1fr 1fr;
@@ -160,5 +150,28 @@ ul {
 @media only screen and (max-width: 750px) {
     section {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width:500px) {
+    .github-corner:hover .octo-arm {
+        animation: none
+    }
+
+    .github-corner .octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+    }
+
+    .card .content {
+        flex-direction: column-reverse;
+    }
+
+    .card .content .element {
+        height: 150px;
+        width: unset;
+    }
+
+    .card .content .spec {
+        width: unset;
     }
 }
