@@ -1,11 +1,3 @@
-<style>
-:host {
-  height: 100%;
-  width: 100%;
-  display: block;
-}
-</style>
-
 <template>
   <div>
     <slot></slot>
@@ -55,7 +47,7 @@ export default {
         imgContainer.style.width = `100%`;
         imgContainer.style.height = `100%`;
         imgContainer.style.filter = `blur(2px)`;
-        imgContainer.style.backgroundSize = `auto 100%`;
+        imgContainer.style.backgroundSize = `contain`;
         imgContainer.style.backgroundRepeat = `no-repeat`;
         imgContainer.style.backgroundPosition = `center`;
         imgContainer.id = `lazyImg`;
@@ -64,7 +56,7 @@ export default {
 
         lazyImg.onload = () => {
           if (this.isLoading) {
-            imgContainer.style.backgroundColor = `none`;
+            imgContainer.style.backgroundColor = `unset`;
             imgContainer.style.backgroundImage = `url("${this.lazySrc}")`;
           }
         };

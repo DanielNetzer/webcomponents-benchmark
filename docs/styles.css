@@ -76,10 +76,12 @@ section {
     color: #fff;
     background-color: #70B7FD;
     font-size: 20px;
+    height: 20px;
 }
 
 .card .content {
     display: flex;
+    height: calc(100% - 50px);
 }
 
 .card .content .element {
@@ -100,6 +102,7 @@ ul {
 
 .card .content .spec>section {
     display: flex;
+    flex: 1 1 auto;
     padding: 15px;
     border-bottom: 1px solid #B3B9C4;
     justify-content: space-evenly;
@@ -110,9 +113,10 @@ ul {
 }
 
 .card .content .spec>header {
-    padding: 15px;
+    padding: 5px;
     background-color: #FD6C6C;
     color: #fff;
+    text-align: center;
 }
 
 .github-corner:hover .octo-arm {
