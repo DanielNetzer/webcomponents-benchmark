@@ -59,7 +59,7 @@ export class StencilImg {
       imgContainer.style.width = `100%`;
       imgContainer.style.height = `100%`;
       imgContainer.style.filter = `blur(2px)`;
-      imgContainer.style.backgroundSize = `auto 100%`;
+      imgContainer.style.backgroundSize = `contain`;
       imgContainer.style.backgroundRepeat = `no-repeat`;
       imgContainer.style.backgroundPosition = `center`;
       imgContainer.id = 'lazyImg';
@@ -68,7 +68,7 @@ export class StencilImg {
 
       lazyImg.onload = () => {
         if (this.isLoading) {
-          imgContainer.style.backgroundColor = `none`;
+          imgContainer.style.backgroundColor = `unset`;
           imgContainer.style.backgroundImage = `url("${this.lazySrc}")`;
         }
       };

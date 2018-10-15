@@ -17,8 +17,9 @@
     <meta name="twitter:card" content="summary_large_image">
 
     <base href="/">
-    <title>Web Components Benchmark</title>
+    <title>Custom Elements Anyway</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -191,6 +192,7 @@
                         <ul>
                             <li>Must include Vue!</li>
                             <li>Documentation still lacks a lot</li>
+                            <li>Incompatible with IE11</li>
                         </ul>
                     </section>
                     <section>
@@ -204,6 +206,163 @@
                 </div>
             </div>
         </div>
+
+        <!-- Lit-Html -->
+        <div class="card">
+            <header>
+                Lit-Html By Polymer
+            </header>
+            <div class="content">
+                <div class="spec">
+                    <header>
+                        Bundle Size
+                    </header>
+                    <section>
+                        45.2KB
+                    </section>
+                    <header>
+                        Compatibility
+                    </header>
+                    <section>
+                        <i class="chrome" title="Chrome"></i>
+                        <i class="firefox" title="Firefox"></i>
+                        <i class="edge" title="Edge"></i>
+                        <i class="ie11" title="IE11"></i>
+                    </section>
+                    <header>
+                        Pro's
+                    </header>
+                    <section>
+                        <ul>
+                            <li>Similar to native implementation</li>
+                            <li>Templating done in a smart and intuitive way</li>
+                        </ul>
+                    </section>
+                    <header>
+                        Con's
+                    </header>
+                    <section>
+                        <ul>
+                            <li>Hard to configure the bundling process</li>
+                            <li>Documentation still lacks a lot</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <a href="https://polymer.github.io/lit-html/" target="_blank">
+                            Documentation
+                        </a>
+                    </section>
+                </div>
+                <div class="element">
+                    <lit-img src="./assets/lit/lit.png" lazySrc="./assets/lit/lit-lazy.png"></lit-img>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stencil -->
+        <div class="card">
+            <header>
+                Stencil
+            </header>
+            <div class="content">
+                <div class="spec">
+                    <header>
+                        Bundle Size
+                    </header>
+                    <section>
+                        86.6KB <em>(With Polyfills)</em>
+                    </section>
+                    <header>
+                        Compatibility
+                    </header>
+                    <section>
+                        <i class="chrome" title="Chrome"></i>
+                        <i class="firefox" title="Firefox"></i>
+                        <i class="edge" title="Edge"></i>
+                        <i class="ie11" title="IE11"></i>
+                    </section>
+                    <header>
+                        Pro's
+                    </header>
+                    <section>
+                        <ul>
+                            <li>Great documentation</li>
+                            <li>Lazy loading mechanism exist by default</li>
+                            <li>Comes with polyfills for all browsers</li>
+                        </ul>
+                    </section>
+                    <header>
+                        Con's
+                    </header>
+                    <section>
+                        <ul>
+                            <li>Hard to configure the bundling process and even then bundles into multiple folders</li>
+                            <li>No option to remove/disable the lazy loading mechanism</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <a href="https://stenciljs.com/" target="_blank">
+                            Documentation
+                        </a>
+                    </section>
+                </div>
+                <div class="element">
+                    <stencil-img src="./assets/stencil/stencil.png" lazy-src="./assets/stencil/stencil-lazy.png"></stencil-img>
+                </div>
+            </div>
+        </div>
+
+        <!-- Svelte -->
+        <div class="card">
+            <header>
+                Svelte
+            </header>
+            <div class="content">
+                <div class="spec">
+                    <header>
+                        Bundle Size
+                    </header>
+                    <section>
+                        3.91KB
+                    </section>
+                    <header>
+                        Compatibility
+                    </header>
+                    <section>
+                        <i class="chrome" title="Chrome"></i>
+                        <i class="firefox" title="Firefox"></i>
+                        <i class="edge" title="Edge"></i>
+                    </section>
+                    <header>
+                        Pro's
+                    </header>
+                    <section>
+                        <ul>
+                            <li>Great documentation</li>
+                            <li>Small bundle size</li>
+                        </ul>
+                    </section>
+                    <header>
+                        Con's
+                    </header>
+                    <section>
+                        <ul>
+                            <li>Incompatible with IE11</li>
+                            <li>Small community</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <a href="https://svelte.technology/" target="_blank">
+                            Documentation
+                        </a>
+                    </section>
+                </div>
+                <div class="element">
+                    <stencil-img src="./assets/svelte/svelte.png" lazy-src="./assets/svelte/svelte-lazy.png"></stencil-img>
+                </div>
+            </div>
+        </div>
+
     </section>
 
     <!-- Outro -->

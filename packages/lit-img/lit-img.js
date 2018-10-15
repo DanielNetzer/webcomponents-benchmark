@@ -4,12 +4,6 @@ import {
 
 let tmpl = document.createElement('template');
 tmpl.innerHTML = `
-  <style>:host { 
-    height: 100%;
-    width: 100%;
-    display: block;
-   }
-   </style>
    <slot></slot>
 `;
 
@@ -48,7 +42,7 @@ class LitImg extends LitElement {
         imgContainer.style.width = `100%`;
         imgContainer.style.height = `100%`;
         imgContainer.style.filter = `blur(2px)`;
-        imgContainer.style.backgroundSize = `auto 100%`;
+        imgContainer.style.backgroundSize = `contain`;
         imgContainer.style.backgroundRepeat = `no-repeat`;
         imgContainer.style.backgroundPosition = `center`;
         imgContainer.id = `lazyImg`;
@@ -61,7 +55,7 @@ class LitImg extends LitElement {
 
             lazyImg.onload = () => {
                 if (this.isLoading) {
-                    imgContainer.style.backgroundColor = `none`
+                    imgContainer.style.backgroundColor = `unset`
                     imgContainer.style.backgroundImage = `url("${this.lazysrc}")`
                 }
             }
