@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --open",
-    "prebuild:all": "rimraf dist",
+    "prebuild:all": "rimraf docs",
     "build:all": "npm run build:angular && npm run build:stencil && npm run build:vanilla && npm run build:vue && npm run build:lit && npm run build:svelte",
     "postbuild:all": "webpack",
     "build:angular": "cd packages/ae-img && npm run build:elements",

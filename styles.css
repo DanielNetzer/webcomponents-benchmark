@@ -11,21 +11,36 @@ body {
     background-color: #64CEAA;
     color: white;
     height: 90px;
-    padding: 0 12px;
+    padding: 0 30px;
     box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 3px -2px rgba(0, 0, 0, 0.14), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+}
+
+.navbar.footer {
+    flex-direction: column;
+    justify-content: center;
 }
 
 .emp {
     background-color: white;
-    padding: 15px;
-    height: 20vh;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .emp>header {
-    font-size: 20px;
+    font-size: 40px;
+}
+
+.emp .logo {
+    width: 20%;
+    height: 100%;
+}
+
+.emp .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 i {
@@ -149,6 +164,10 @@ ul {
 }
 
 @media only screen and (max-width: 750px) {
+    .emp .logo {
+        display: none;
+    }
+
     section {
         grid-template-columns: 1fr;
     }
